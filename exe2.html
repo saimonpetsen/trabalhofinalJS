@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+
+<body>
+	<span>Números</span>
+	<input id="number">
+	<button onclick="maior()">Qual o maior?</button>
+<script>
+	function maior(){
+		var numeros = document.getElementById("number").value;
+		var separa = numeros.split(",");
+		separa.sort(function(a, b){
+
+		    return b - a;
+
+		});
+		var elemento_pai = document.body;
+		var br = document.createElement('br');
+		var resposta = document.createElement('span');
+
+		resposta.textContent = "O maior é " + separa[0];
+		elemento_pai.appendChild(br);
+		elemento_pai.appendChild(resposta);
+		
+	}
+	
+</script>
+
+</body>
+</html>

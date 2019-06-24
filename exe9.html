@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+
+<body>
+
+	<h2>HTML Forms</h2>
+
+	<form id="form">
+		  Nome <br>
+		  <input type="text" id="nome">
+		  <br>
+		  Sobrenome <br>
+		  <input type="text" id="sobrenome"><br>
+		  Idade <br>
+		  <input type="number" id="idade">
+		  <br><br>
+		  <button onclick="enviar()" id ="botao">Enviar</button>
+	</form> 
+	<table id ="tabela">
+		<tr>
+			<th>Nome</th>
+			<th>Sobrenome</th>
+			<th>Idade</th>
+		</tr>
+		<tr id="inserir">
+		</tr>
+	</table>
+
+
+	
+<script>
+	var pessoa = [];
+
+	document.getElementById("botao").addEventListener("click", function(event){
+	  event.preventDefault()
+	});
+
+	function enviar(){
+
+		var pai = document.getElementById("inserir");
+		var td = document.createElement('td');
+
+		var nome = document.getElementById("nome").value;
+		var sobrenome = document.getElementById("sobrenome").value;
+		var idade = document.getElementById("idade").value;
+
+		pessoa.push(nome);
+		pessoa.push(sobrenome);
+		pessoa.push(idade);
+		
+	
+	
+		for (var i = 0; i < pessoa.length; i++) {
+			td.innerHTML = pessoa[i];
+
+			pai.appendChild(td);    
+			
+		}
+		document.getElementById("nome").value='';
+		document.getElementById("sobrenome").value='';
+		document.getElementById("idade").value='';
+	}
+
+	
+	
+</script>
+
+</body>
+</html>

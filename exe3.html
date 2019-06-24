@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+
+<body>
+	<span>Informe as Idades</span>
+	<input id="idade">
+	<button onclick="maiorIdade()">Resposta</button><br>
+<script>
+	var contma = 0;
+	var contme = 0;
+	function maiorIdade(){
+		var idades = document.getElementById("idade").value;
+		var separa = idades.split(",");
+
+		var elemento_pai = document.body;
+		var br = document.createElement('br');
+		var maioridade = document.createElement('span');
+		var menoridade = document.createElement('span');
+
+		for (var i = 0; i < separa.length; i++) {
+			if(separa[i] < 18){
+				contme++;
+			}else{
+				contma++;
+			}
+		}
+		if(contma <=1){
+			maioridade.textContent = contma + " pessoa eh maior de idade";
+		}else{
+			maioridade.textContent = contma + " pessoas sao maiores de idade";
+		}
+
+		if(contme <=1){
+			menoridade.textContent = contme + " pessoa eh menor de idade";
+		}else{
+			menoridade.textContent = contme + " pessoas sao menores de idade";
+		}
+		
+		
+		elemento_pai.appendChild(maioridade);
+		elemento_pai.appendChild(br);
+		elemento_pai.appendChild(menoridade);
+		
+	}
+	
+</script>
+
+</body>
+</html>

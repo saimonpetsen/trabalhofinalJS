@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+
+<body>
+	
+<script>
+	var novoMes;
+	var data = new Date();
+	var dia = data.getDate();
+	var mes = data.getMonth();
+	var ano = data.getFullYear();
+
+	if(mes == 1){
+		novoMes = "Janeiro";
+	}else if(mes == 2){
+		novoMes = "Fevereiro";
+	}else if(mes == 3){
+		novoMes = "Março";
+	}else if(mes == 4){
+		novoMes = "Abril";
+	}else if(mes == 5){
+		novoMes = "Maio";
+	}else if(mes == 6){
+		novoMes = "Junho";
+	}else if(mes == 7){
+		novoMes = "Julho";
+	}else if(mes == 8){
+		novoMes = "Agosto";
+	}else if(mes == 9){
+		novoMes = "Setembro";
+	}else if(mes == 10){
+		novoMes = "Outubro";
+	}else if(mes == 11){
+		novoMes = "Novembro";
+	}else if(mes == 12){
+		novoMes = "Dezembro";
+	}
+
+	if(dia < 10){
+		dia = "0" + dia;
+	}
+	if(mes < 10){
+		mes = "0" + mes;
+	}
+
+	data = dia + '/' + mes + '/' + ano + ' - ' + ano + '-' + mes + '-' + dia + ', ' + dia + " de " + novoMes + " de " + ano;
+
+	var elemento_pai = document.body;
+	var span = document.createElement('span');
+	span.textContent = data;
+	elemento_pai.appendChild(span);
+
+
+	
+</script>
+
+</body>
+</html>

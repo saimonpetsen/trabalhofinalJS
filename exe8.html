@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+
+<body>
+
+	<span>Digite um nome</span>
+	<input id="nome">
+	<button onclick="envia()">Enviar</button><br><br>
+
+	
+<script>
+
+	var nomesArray = [];
+
+	function envia(){
+
+		var elemento_pai = document.body;
+		var div = document.createElement('div');
+
+		var nomes = document.getElementById("nome").value;
+		nomesArray.push(nomes);
+
+	
+	
+		for (var i = 0; i < nomesArray.length; i++) {
+			div.innerHTML = "<ul>" +
+						  			"<li>" + nomesArray[i] + "</li>" +
+						  		"<ul>";
+
+			elemento_pai.appendChild(div);    
+			
+		}
+		document.getElementById("nome").value='';
+	}
+	
+</script>
+
+</body>
+</html>
